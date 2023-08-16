@@ -1,4 +1,4 @@
-import { getByRole, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import { Skills } from './skills'
 
 describe('Skills', () => {
@@ -35,6 +35,8 @@ describe('Skills', () => {
 
     // for the findBy class, do not forget to add async and await since findBy returns a promise.
     // the default timeout value for findBy is 1000ms, so if you need more time, pass in a third argument object to findBy, specify timeout and set it with any value.
+    // to debug tests, you may use screen.debug(); before and after the test you would like to debug. Uncomment lines 39 and 49 to try it.
+    // screen.debug();
     test('Start learning button is eventually rendered', async () => {
         render(<Skills skills={skills} />);
         const startLearningButton = await screen.findByRole("button", {
@@ -43,5 +45,6 @@ describe('Skills', () => {
             timeout: 2000
         });
         expect(startLearningButton).toBeInTheDocument();
-    })
+    });
+    // screen.debug();
 });

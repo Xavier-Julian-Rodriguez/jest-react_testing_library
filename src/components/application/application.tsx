@@ -5,7 +5,7 @@ export const Application = () => {
     <h2>Section 1</h2>
     <p>All fields are mandatory</p>
     <span title="close">X</span>
-    <img src="https://unsplash.com/photos/NRQV-hBF10M" alt="landscape of Yosemite" />
+    <img src="/yosemite_landscape.jpg" alt="landscape of Yosemite" width="640px" height="427px" />
     <div data-testid="custom-element">Custom HTML element</div>
     <form>
         <div>
