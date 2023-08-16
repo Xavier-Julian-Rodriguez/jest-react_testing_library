@@ -32,4 +32,16 @@ describe('Skills', () => {
         });
         expect(startLearningButton).not.toBeInTheDocument();
     });
-})
+
+    // for the findBy class, do not forget to add async and await since findBy returns a promise.
+    // the default timeout value for findBy is 1000ms, so if you need more time, pass in a third argument object to findBy, specify timeout and set it with any value.
+    test('Start learning button is eventually rendered', async () => {
+        render(<Skills skills={skills} />);
+        const startLearningButton = await screen.findByRole("button", {
+            name: "Start learning"
+        }, {
+            timeout: 2000
+        });
+        expect(startLearningButton).toBeInTheDocument();
+    })
+});
