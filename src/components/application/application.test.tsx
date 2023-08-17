@@ -7,7 +7,7 @@ describe("Application", () => {
         render(<Application />);
 
         const pageHeading = screen.getByRole("heading", {
-            level: 1
+            name: "Job application form"
         });
         expect(pageHeading).toBeInTheDocument();
 
@@ -56,7 +56,9 @@ describe("Application", () => {
         const termsElement2 = screen.getByLabelText("I agree to the terms and conditions");
         expect(termsElement2).toBeInTheDocument();
 
-        const submitButton = screen.getByRole("button");
+        const submitButton = screen.getByRole("button", {
+            name: "Submit"
+        });
         expect(submitButton).toBeInTheDocument();
     })
 })

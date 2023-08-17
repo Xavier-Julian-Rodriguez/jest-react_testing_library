@@ -1,3 +1,5 @@
+import { Counter } from "../counter/counter"
+
 export const Application = () => {
   return (
     <>
@@ -40,6 +42,7 @@ export const Application = () => {
         </div>
         <button>Submit</button>
     </form>
+    <Counter />
     </>
   )
 }
